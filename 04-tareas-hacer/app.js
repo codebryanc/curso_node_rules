@@ -17,7 +17,7 @@ const main = async() => {
         // Do while
         opt = await inquirerMenu();
 
-        console.log(`${opt}`);
+        console.log(opt);
 
     } while(opt != '0');
 }

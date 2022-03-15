@@ -6,14 +6,16 @@ const menuOptions = [
         type: 'list',
         name: 'Opción',
         message: '¿Qué desea hacer?',
-        choices: ['opt1', 'opt2', 'opt3']
+        choices: [
+            '1. Crear lista',
+            'opt2',
+            'opt3'
+        ]
     }
 ];
 
 const inquirerMenu = async() => {
-    console.clear();
 
-    console.clear();
     console.log("=================================".green);
     console.log("      Seleccione una opción      ".green)
     console.log("=================================\n".green);
