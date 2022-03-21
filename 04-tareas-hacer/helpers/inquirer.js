@@ -9,31 +9,31 @@ const menuOptions = [
         choices: [
             {
                 value: '1',
-                name: '1. Crear tarea'
+                name: `${'1.'.yellow} Crear tarea`
             },
             {
                 value: '2',
-                name: '2. Listar tareas'
+                name: `${'2.'.yellow} Listar tareas`
             },
             {
                 value: '3',
-                name: '3. Listar tareas completadas'
+                name: `${'3.'.yellow} Listar tareas completadas`
             },
             {
                 value: '4',
-                name: '4. Listar tareas pendientes'
+                name: `${'4.'.yellow} Listar tareas pendientes`
             },
             {
                 value: '5',
-                name: '5. Completar tarea(s)'
+                name: `${'5.'.yellow} Completar tarea(s)`
             },
             {
                 value: '6',
-                name: '6. Borrar una tarea'
+                name: `${'6.'.yellow} Borrar una tarea`
             },
             {
                 value: '0',
-                name: '0. Salir'
+                name: `${'7.'.yellow} Salir`
             }
         ]
     }
@@ -43,7 +43,7 @@ const inquirerMenu = async() => {
 
     console.clear();
     console.log("=================================".green);
-    console.log("      Seleccione una opción      ".green)
+    console.log("      Seleccione una opción      ".white)
     console.log("=================================\n".green);
 
     // Por que el name es opcion en el => name: 'Opción'
@@ -92,8 +92,44 @@ const leerInput = async(message) => {
     return questionName;
 }
 
+const listadoTareasBorrar = async(tareas = []) => {
+
+    const choices = tareas.map((tarea, index) => {
+        const idx = `${index + 1}.`.green;
+        return {
+            value: tarea.id,
+            name: `${idx} ${tarea.description}`
+        }
+    });
+
+    const preguntas = [
+        {
+            type:'list',
+            name: 'id',
+            message: 'borrar',
+            choices
+        }
+    ]
+
+    const { id } = await inquirer.prompt(preguntas);
+    return id;
+}
+
+const confirmación = async (message) => {
+    const question = [{
+        type: 'confirm',
+        name: 'ok',
+        message
+    }];
+
+    const { ok } = await inquirer.prompt(question);
+    return ok;
+}
+
 module.exports = {
     inquirerMenu,
     pausa,
-    leerInput
+    leerInput,
+    listadoTareasBorrar,
+    confirmación
 }
