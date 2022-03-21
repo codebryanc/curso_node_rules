@@ -52,12 +52,14 @@ const main = async() => {
             case '6':
                 // Eliminar tarea
                 const id = await listadoTareasBorrar(tareas.listadoArray);
-                const confirma = await confirmación('¿Seguro desea eliminar?');
-                
-                if(confirma) {
-                    tareas.eliminarTarea(id);
-                    console.log(`Tarea borrada correctamente`);
-                    
+
+                if(id !== 0) {
+                    const confirma = await confirmación('¿Seguro desea eliminar?');
+
+                    if(confirma) {
+                        tareas.eliminarTarea(id);
+                        console.log(`Tarea borrada correctamente`);
+                    }
                 }
             break;
         }
