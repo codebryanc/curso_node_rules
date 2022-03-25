@@ -69,8 +69,6 @@ const leerInput = async(message) => {
         }
     ];
 
-    console.log(`\n`);
-    
     const {questionName} = await inquirer.prompt(question);
 
     return questionName;
