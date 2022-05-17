@@ -18,16 +18,19 @@ const main = async() => {
 
                 // Buscar los lugares
 
-
-                
                 // Seleccionar el lugar
-                console.log(`\n Información del lugar \n`);
-                console.log(`Ciudad: `);
+
+                // Clima
+
+                // Mostrar resultados
+                console.log(`\nInformación de la ciudad\n`.green);
+                console.log(`Ciudad: `, );
                 console.log(`Longitud: `);
                 console.log(`Latitud: `);
                 console.log(`Temperatura: `);
                 console.log(`Mínima: `);
                 console.log(`Máxima: `);
+
                 
             break;
             case 2:

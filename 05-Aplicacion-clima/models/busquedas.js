@@ -1,15 +1,17 @@
 class Busquedas {
 
-    historial = ['Tegusigalpa', 'Madrid', 'San Jose', 'Bogotá']
+    historial = ['Tegucigalpa', 'Madrid', 'San Jose', 'Bogotá'];
 
     constructor() {
         // TODO: Leer DB si existe
     }
 
-    async ciudad(lugar=''){
+    async ciudad(lugar = '') {
+        
+        // Petición HTTP
         console.log(`${lugar}`);
 
-        return []; // Ciudades que conicidan con los lugares de la persona
+        return []; // regresar => Ciudades que conicidan con los lugares de la persona
     }
 }
 
